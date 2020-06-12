@@ -1,24 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Home from './Component/Home';
+import Syllabus from './Component/Syllabus';
+import Qp from './Component/Qp';
+import {Switch , Route} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from './Component/Navbar';
+import Scheme2017 from './Component/Scheme2017';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Navbar />
+      <switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/Syllabus" component={Syllabus} />
+      <Route path="/Qp" component={Qp} />
+      <Route path="/Scheme2017" component={Scheme2017}/>
+      </switch>
+      
     </div>
   );
 }
